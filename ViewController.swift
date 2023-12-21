@@ -1,21 +1,15 @@
-//
-//  ViewController.swift
-//  Tutorial - Single View App
-//
-//  Created by Jacque Crossett on 3/25/19.
-//  Copyright © 2019 Jacque Crossett. All rights reserved.
-//
-
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        if let url = URL(string: "https://www.yourwebsite.com") {
+            let request = URLRequest(url: url)
+            webView.load(request)
+        }
     }
-
-
-
 }
-
